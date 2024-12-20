@@ -6,7 +6,8 @@ import base64
 import os
 import subprocess
 from functools import lru_cache
-
+st.write("Current working directory:", os.getcwd())
+st.write("File exists:", os.path.exists("Image/アクポニイメージ.png"))
 def password_authentication():
     if "authenticated" not in st.session_state:
         st.session_state["authenticated"] = False
