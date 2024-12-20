@@ -6,8 +6,7 @@ import base64
 import os
 import subprocess
 from functools import lru_cache
-st.write("Current working directory:", os.getcwd())
-st.write("File exists:", os.path.exists("Image/アクポニイメージ.png"))
+
 def password_authentication():
     if "authenticated" not in st.session_state:
         st.session_state["authenticated"] = False
@@ -27,7 +26,7 @@ def password_authentication():
 
 st.set_page_config(
     page_title="ORSC_アクアポニックスWeb",
-    page_icon="Image/aqua_icon.png",
+    page_icon="aquaponicsーpages/Image/aqua_icon.png",
     layout="wide"
 )
 
@@ -148,7 +147,7 @@ if tab == "ホーム":
     if "authenticated" not in st.session_state or not st.session_state["authenticated"]:
         login_form()
     else:
-        add_bg_with_title("Image/アクポニイメージ.png", "アクアポニックス計測システム", resize=False)
+        add_bg_with_title("aquaponicsーpages/Image/アクポニイメージ.png", "アクアポニックス計測システム", resize=False)
         col_akuponimain, col_moukaweather = st.columns([5, 2])
 
         with col_akuponimain:
@@ -156,9 +155,9 @@ if tab == "ホーム":
             st.markdown('<h1 class="custom-title">計測データ</h1>', unsafe_allow_html=True)
             col0, col1,col2= st.columns(3)
             with st.spinner('アイコンを読み込み中...'):
-                display_icon("Image/アクポニ打ち合わせ資料.png", "https://drive.google.com/drive/folders/1NaMoLD8Xrt2akZncrEwc382uh-dL8Sj5/", col0, 200,200)
-                display_icon("Image/アクポニPLC計測データ.png", "https://drive.google.com/drive/folders/0AHHJiTXY2uaDUk9PVA", col1, 200, 200)
-                display_icon("Image/アクポニモニタリング結果共有.png", "https://drive.google.com/drive/folders/0AG1YIuJ5NR6yUk9PVA", col2, 200,200)
+                display_icon("aquaponicsーpages/Image/アクポニ打ち合わせ資料.png", "https://drive.google.com/drive/folders/1NaMoLD8Xrt2akZncrEwc382uh-dL8Sj5/", col0, 200,200)
+                display_icon("aquaponicsーpages/Image/アクポニPLC計測データ.png", "https://drive.google.com/drive/folders/0AHHJiTXY2uaDUk9PVA", col1, 200, 200)
+                display_icon("aquaponicsーpages/Image/アクポニモニタリング結果共有.png", "https://drive.google.com/drive/folders/0AG1YIuJ5NR6yUk9PVA", col2, 200,200)
 
             st.markdown('<h1 class="custom-title">ハウスカメラ映像（開発中）</h1>', unsafe_allow_html=True)
             st.write("該当ポイントをクリックすると映像が確認できます")
@@ -167,11 +166,11 @@ if tab == "ホーム":
             password = "aqua0285"
             camera_url1 = f"https://{usename}:{password}@10.14.71.122/"
             # アイコンのリンクとして使用
-            display_icon("Image/技術部共有.png", camera_url1, col_camera1, 150, 150)
-            display_icon("Image/岩崎開発中.png", "http://10.14.71.136:8000/", col_iwasaki, 150,150)
+            display_icon("aquaponicsーpages/Image/技術部共有.png", camera_url1, col_camera1, 150, 150)
+            display_icon("aquaponicsーpages/Image/岩崎開発中.png", "http://10.14.71.136:8000/", col_iwasaki, 150,150)
 
             col_satoaqua,_,_ =st.columns(3)
-            display_icon("Image/sato_kaihatuchuu.png", "https://orsc-aquaponics-pages-zp27terjwfvoxrmyhcvjqp.streamlit.app/", col_satoaqua, 150, 150)
+            display_icon("aquaponicsーpages/Image/sato_kaihatuchuu.png", "https://orsc-aquaponics-pages-zp27terjwfvoxrmyhcvjqp.streamlit.app/", col_satoaqua, 150, 150)
 
 
                     
