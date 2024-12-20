@@ -177,3 +177,17 @@ if tab == "ホーム":
         with col_moukaweather:
             url = "https://weathernews.jp/onebox/radar/tochigi/09209/"
             st.components.v1.iframe(src=url, width=400, height=700)
+
+# サイト管理ページの表示
+if tab == "サイト管理":
+    if "authenticated" not in st.session_state or not st.session_state["authenticated"]:
+        login_form()
+    elif st.session_state["user_role"] == "admin":
+        st.markdown('<h3 class="custom-title">認証済</h3>', unsafe_allow_html=True)
+        st.markdown("[・【Google Cloud ダッシュボード】](https://console.cloud.google.com/home/dashboard?project=custom-temple-435205-i6&organizationId=468514332594&supportedpurview=project)")
+        st.markdown("[・【GitHub】](https://github.com/tsuyoshi-sato-kiden/Electromechanical)")
+        st.markdown("[・【Streamlit Cloud】](https://share.streamlit.io/)")
+        st.markdown("[・【コンプレッサ電流値計測cloud】](https://console.cloud.google.com/welcome?inv=1&invt=Abjtfw&project=bq-compressor-measurements&supportedpurview=project)")
+        st.markdown('[※開発PCのみで動作_アクアポニックスシステム開発Visual Studio Code](vscode://file/C:/Users/tsuyoshi.sato/Desktop/sato_pythonCode/aquaponicsーpages)')
+    else:
+        st.warning("このページにアクセスする権限がありません。")
